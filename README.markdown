@@ -446,7 +446,7 @@ The code required to run a small sensor application on Kura that publishes to Se
 
 ## Source Code
 
-This tutorial is available in a git repository at Github or Bitbucket. The source code for the Sampler app is also available on Github or Bitbucket.
+This tutorial is available in a git repository at [Github](https://github.com/GeoSensorWebLab/kura-sensorthings-tutorial) or [Bitbucket](https://bitbucket.org/geosensorweblab/kura-sensorthings-tutorial). The source code for the Sampler app is also available on [Github](https://github.com/GeoSensorWebLab/com.example.kura.sensorthings.sampler) or [Bitbucket](https://bitbucket.org/geosensorweblab/com.example.kura.sensorthings.sampler).
 
 ## Author
 
