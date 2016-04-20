@@ -14,7 +14,7 @@ The primary Kura development environment is Eclipse. For this tutorial I will be
 
 When you run Eclipse for the first time, it will ask you to create a workspace. This is a directory that will store all your projects and code. I recommend creating a new workspace just for this Kura tutorial.
 
-![Eclipse Workspace](images/img01.png)
+![Eclipse Workspace](images/neweclipse.png)
 
 Next we have to install mToolkit. This allows us to connect to a Kura device (or emulator) from Eclipse and monitor/control it.
 
@@ -28,7 +28,7 @@ In Eclipse, select **File | Import…**. Select **General > Existing Projects in
 
 The projects will appear in the workspace, but there will be some errors displayed. This is because we have not told Eclipse where we will be deploying these projects. Expand the `target-definition` project, and open the `kura-equinox_3.8.1.target` file. Select **Set as Target Platform**. All the errors in the Eclipse workspace should disappear.
 
-![Eclipse Kura Workspace](images/img02.png)
+![Eclipse Kura Workspace](images/changetarget.png)
 
 ## Testing the Emulator
 
@@ -48,7 +48,7 @@ Click the red stop button in the Console tab to stop the emulator. The wrong ver
 
 Right-click the `Kura_Emulator_OSX.launch` (or `Kura_Emulator_Linux.launch`) file, and select **Run As | Run Configurations…**. In the left-side pane, ensure the emulator configuration for your OS is selected. In the main view, select the **Settings** tab. Change the Execution Environment to `JavaSE-1.8 (Java SE 8 [1.8.0_73])`. (Your patch number may be slightly different — be sure to select JavaSE-1.8 though). Click the **Apply** button, then the **Run** button. You should get an output similar to the next section.
 
-![Run Configuration](images/img03.png)
+![Run Configuration](images/runconfigurations.png)
 
 ### There isn't a Problem
 
@@ -80,7 +80,7 @@ If the emulator launches correctly, you should see output similar to below:
 
 If you open a web browser to http://localhost:8080/kura, you should be prompted for a username and password. Use `admin` and `admin`, and the Kura web UI should load.
 
-![Kura Web UI](images/img04.png)
+![Kura Web UI](images/webui.png)
 
 Great! The emulator is working! Go ahead and stop the emulator by clicking the red stop button in the Eclipse Console tab.
 
@@ -90,15 +90,15 @@ Now we can create a new project in Eclipse. This project will be our sample sens
 
 In Eclipse, create a new Project from **File | New | Project…**. Select **Plug-in Development > Plug-in Project**, then **Next**.
 
-![New Project Wizard](images/img05.png)
+![New Project Wizard](images/newproject1.png)
 
 For the project name, use `com.example.kura.sensorthings.sampler`. (You can change this, but you will need to change the reference multiple times later.) For the Target Platform, select **an OSGi framework: Standard**. Select **Next**.
 
-![New Project Details](images/img06.png)
+![New Project Details](images/newproject2.png)
 
 Uncheck **Generate an activator, a Java class that controls the plug-in’s life cycle** and leave the rest of values at their defaults. Make sure the Execution Environment is Java 8. Select **Finish**. Eclipse will prompt you about "Open Associated Perspective?"; go ahead and select **Yes**.
 
-![Final Project Details](images/img07.png)
+![Final Project Details](images/newproject3.png)
 
 The new project will now be open in Eclipse, and the `MANIFEST.MF` file open in the editor. In the "Overview" tab, scroll down to "Execution Environments" and remove all the entries. If you have JavaSE-1.8 listed here, then Equinox 3.8.1 will refuse to load it in Kura. This may be fixed in the future with a newer release of Equinox.
 
@@ -108,7 +108,7 @@ Now we will create a Java class that will hold the logic of our Kura application
 
 In Eclipse, select **File | New | Class**. Set the Source folder to `com.example.kura.sensorthings.sampler/src`. For package, `com.example.kura.sensorthings.sampler`. For Name, `Sampler`. Select **Finish**.
 
-![New Class](images/img08.png)
+![New Class](images/newclass.png)
 
 The new class will open in the editor. Paste in this sample code:
 
@@ -144,7 +144,7 @@ For the parent folder, use `com.example.kura.sensorthings.sampler/OSGI-INF`. In 
 
 The new component definition file will be opened.
 
-![New Component](images/img09.png)
+![New Component](images/newcomponent.png)
 
 Change the Activate field to `activate`, and the Deactivate field to `deactivate`. These are the event hooks. Uncheck and re-check "This component is enabled when started", then save the file. Now double-check the values, as the editor is flaky and the values might get reset.
 
