@@ -6,6 +6,8 @@
 
 Some of the instructions are based on the [Kura Getting Started Guide](http://eclipse.github.io/kura/doc/kura-setup.html). All the code is also available on Github and Bitbucket — see "Source Code" section below.
 
+This tutorial is for the April 2016 version of Kura, which is version 1.4.0.
+
 ## Set Up Java, Eclipse
 
 We will be using Java 8 for this project, primarily due to its improved date/time libraries. You can download [Java SE 8 JDK from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk), or [OpenJDK 8](http://openjdk.java.net/install/) for Linux/BSD. Download and follow the installation instructions to set up Java. Be sure to download a **JDK** and not a **JRE**, as the JDK contains both a JRE and additional tools and libraries for building Java applications.
@@ -22,7 +24,7 @@ Open the menu **Help | Install New Software…**. In the first field, enter `htt
 
 ## Set up Kura Development Environment
 
-Next we will import some base projects into our workspace that will allow us to work with Kura. Go to the [Kura Downloads](https://www.eclipse.org/kura/downloads.php) page and select "Developer's Workspace (with Web UI)". There are two workspaces to download, be sure to select the one with the Web UI.
+Next we will import some base projects into our workspace that will allow us to work with Kura. Go to the [Kura Downloads](https://www.eclipse.org/kura/downloads.php) page and select "Developer's Workspace (with Web UI)" for version 1.4.0. There are two workspaces to download, be sure to select the one with the Web UI.
 
 In Eclipse, select **File | Import…**. Select **General > Existing Projects into Workspace**, then select **Next**. Select an archive, and browse to the ZIP file we just downloaded. Four projects should appear, go ahead and import all of them.
 
